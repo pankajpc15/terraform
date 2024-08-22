@@ -1,8 +1,6 @@
  cat ec2-server.tf
 
 
-
-
 resource "aws_key_pair" "my_ssh_key" {
      key_name= "terraform-auto-key"
      public_key= file("/home/ubuntu/terraform-auto-key.pub")
@@ -78,7 +76,8 @@ output "my_ec2_ip" {
 
 
 =======================
- cat terraform.tf
+
+cat terraform.tf
 terraform {
   required_providers {
     aws = {
@@ -87,23 +86,25 @@ terraform {
     }
   }
 }
+
 ==================================
- cat providers.tf
+
+
+cat providers.tf
 
 provider "aws" {
 
   region = "us-east-1" # Secondary region, if needed
 }
+
 ======================================
-ubuntu@ip-172-31-36-177:~$ cat s3.tf
 
 
+cat s3.tf
 
 resource "aws_s3_bucket" "pc_bucket" {
 
-
               bucket="pc-bucket-1503976440070"
-
 
         tags = {
                   Name        = "pc bucket demo pool"
